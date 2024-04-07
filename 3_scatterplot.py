@@ -11,6 +11,7 @@ plt.show()
 
 # Como há variáveis nos dois eixos, podemos adicionar outras variáveis:
 # Na forma de tamanho dos pontos ("size")
+sns.set_theme(style="darkgrid", palette="bright") 
 sns.scatterplot(data=atlas_ambiental, x="renda", y="escolaridade", size="idade")
 plt.title("Indicadores dos Distritos do Município de São Paulo",fontsize=14)
 plt.xlabel('Renda',fontsize=12)

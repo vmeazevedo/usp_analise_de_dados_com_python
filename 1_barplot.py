@@ -17,6 +17,7 @@ agrupamento_desempenho_ordenado = agrupamento_desempenho.sort_values(
     by=['desempenho'],ascending=False).reset_index()
 
 # Plotando os dados com barplot
+sns.set_theme(style="darkgrid", palette="bright") 
 ax = sns.barplot(x="escola", y="desempenho", data=agrupamento_desempenho_ordenado.head(10))
 ax.bar_label(ax.containers[0], fmt='%.2f')
 

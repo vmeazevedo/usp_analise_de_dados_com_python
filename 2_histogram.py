@@ -12,6 +12,7 @@ plt.show()
 
 # Podemos também utilizar a biblioteca do seaborn para fazer o histograma
 # Vamos adicionar algumas formatações
+sns.set_theme(style="darkgrid", palette="bright") 
 sns.histplot(data=desempenho_aluno_escola, x="desempenho", bins=50)
 plt.title("Histograma dos desempenhos das escolas",fontsize=14)
 plt.xlabel('Desempenho escolar',fontsize=12)
