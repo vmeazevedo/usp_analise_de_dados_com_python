@@ -15,17 +15,17 @@ plt.show()
 # Poderíamos mudar a ordem de apresentação reorganizando os níveis da variável
 sns.countplot(x="perfil", data=perfil_investidor, order=["Agressivo","Moderado","Conservador"], color="blue")
 
-plt.title("Perfil dos Investidores")
-plt.suptitle("Banco X")
-plt.xlabel('Perfil do Investidor',fontsize=12)
-plt.ylabel('Quantidade',fontsize=12)
+plt.title("Perfil dos Investidores")            # add um título
+plt.suptitle("Banco X")                         # add um subtitulo
+plt.xlabel('Perfil do Investidor',fontsize=12)  # legenda eixo x
+plt.ylabel('Quantidade',fontsize=12)            # legenda eixo y
 plt.show()
 
 
 # Vamos alterar o fundo do gráfico (theme)
-sns.set_theme(style="whitegrid", palette="viridis")
+sns.set_theme(style="whitegrid", palette="viridis") 
 ax = sns.countplot(x="perfil", data=perfil_investidor, order=["Agressivo","Moderado","Conservador"])
-# ax.bar_label(ax.containers[0])
+ax.bar_label(ax.containers[0])                  # add um contador da coluna
 
 plt.title("Perfil dos Investidores")
 plt.suptitle("Banco X")
