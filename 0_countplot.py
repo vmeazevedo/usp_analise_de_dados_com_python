@@ -5,7 +5,7 @@ import pandas as pd
 
 
 # Vamos começar analisando uma variável qualitativa, o perfil do investidor
-perfil_investidor = pd.read_excel("(2) perfil_investidor.xlsx")
+perfil_investidor = pd.read_excel("data\(2) perfil_investidor.xlsx")
 
 # Como é uma variável categórica, vamos criar um gráfico de contagem (countplot)
 # Neste caso, o gráfico apresentará a contagem em cada categoria da variável
