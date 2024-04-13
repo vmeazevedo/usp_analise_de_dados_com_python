@@ -1,0 +1,91 @@
+### dataframe
+- colunas nos temos as variaveis de interesse
+- linhas temos as observações
+
+.drop(df.columns[[4]], axis=1, inplace=True) = 
+excluindo a var de acordo com a posição..
+axis 1 indica que esta falando de colunas..
+----------------------------------------------------------------------
+
+.shape[0] = printa a quantidade de linhas no df
+.shape[1] = printa a quantidade de colunas no df
+df.shape  = printa ambos os dados juntos do df
+----------------------------------------------------------------------
+.info() = mostra a estrutura dos dados (colunas, count, dtype)
+
+desemp = df.['desempenho'] -- atribuição o valor da coluna a variavel, o conteudo será uma serie.
+
+del desemp = exclui o objeto do ambiente, limpar cache do ambiente
+----------------------------------------------------------------------
+
+i reference ao indice
+.iloc[0,2] = recupera os dados do df de indice de linha 0 e coluna 2
+.iloc[4, ] = recupera todos os dados do df de indice de linha 4
+.iloc[6:13,] = recupera todos os dados do df de indice de linha entre 7 e 12
+.iloc[,4] = recupera todos os dados do df da 5 coluna
+
+.loc[:, 'priv'] = recupera todos os dados do df da 5 coluna pelo nome da variavel
+
+.reindex(['desempenho','estudante','horas'], axis=1) = reorganiza a posição das colunas na ordem nova
+
+- armazenando apenas algunas colunas do df original em um novo df
+df2 = df[['estudante','desempenho']]
+
+- armazenando apenas algumas colunas em um novo df dropando as colunas q eu não quero
+df3 = df.drop(columns=['horas','priv'])
+
+- removendo algumas linhas do df pelo index da linha
+df4 - df.drop(df.index[475:522])
+
+----------------------------------------------------------------------
+.describe() = retorna estatisticas da variavel quantitativa (count, mean, std,50%mediana,etc)
+df['priv'].value_counts() = retorna uma contagem de frequencia para a variavel qualitativa
+
+quanti - use .describe()
+quali  - use .value_counts(), frequencia
+
+----------------------------------------------------------------------
+- operadores podem ser usados para aquisição de dados
+##MENOR IGUAL
+print(df[df['desempenho'] > 50])
+df5 = df.loc[df['desempenho'] > 50]
+
+##IGUAL
+print(df[df['priv'] == 'pública'])
+
+##IGUAL E
+print(df[(df['priv'] == 'pública') & (df['desempenho'] <= 20)])
+
+##DIFERENTE
+print(df[df['escola'] != 'A'])
+
+##OU
+print(df[(df['escola'] == 'C') | (df['escola'] == 'H')])
+----------------------------------------------------------------------
+
+- Agrupamento dos dados por algum critério, agrupa os dados selecionados como o index do novo df
+dff = df[["escola", "desempenho", "horas"]]
+agrupamento = dff.groupby(by=['escola']).mean()
+
+.reset_index() = reseta o index e permite manipular novamente uma coluna
+agrupamento = agrupamento.reset_index()
+----------------------------------------------------------------------
+
+- Organizando o dataset com base em critério, ordena os valores baseados em uma ou mais colunas
+df.sort_values(by=['desempenho'], ascending=False)
+df.sort_values(by=['desempenho', 'horas'], ascending=False)
+----------------------------------------------------------------------
+
+- Atribuindo novos nomes para as colunas
+nomes = ["ano", "paises", "var_pib_capita", "var_pib_total"]
+pib_paises.columns = nomes
+----------------------------------------------------------------------
+
+- Ajustando variaveis texto para numéricas
+pib_paises['var_pib_capita_ajust'] = pd.to_numeric(pib_paises['var_pib_capita'], errors='coerce')
+pib_paises['var_pib_total_ajust'] = pd.to_numeric(pib_paises['var_pib_total'], errors='coerce')
+
+.dropna() = dropa linha com dados faltantes
+
+
+

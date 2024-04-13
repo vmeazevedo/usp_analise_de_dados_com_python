@@ -1,0 +1,60 @@
+# Análise de Agrupamentos - Clustering
+*observações = linhas
+
+Quando?
+Nós queremos agrupar as linhas do df em grupos homogeneos internamente e hetererogeneos entre si.
+"semelhantes internamentes mas diferentes em grupos"
+
+# Contextualização:
+- A analise de agrupamento é uma caracteristica tecnica exploratoria, de modo que nao tem carater preditivo para observações fora da amostra
+- Se novas observaçoes forem add a amostra, novos agrupamentos devem ser realizados.
+- Se forem alteradas variaveis da analise, novos agrupamentos devem ser realizados.
+
+# Implementaçao:
+A analise depende de escolhas:
+- escolha de medida de dissimilaridade (distancia)
+	refere-se a distancia entre as observações, com base nas variaveis escolhidas
+	portanto, indica o quanto as observações sao diferentes entre si
+- escolha de metodo de aglomeração das observações
+	hierarquico: a quantidade de clusters definida ao longo da analise (passo a passo)
+	nao hierarquico: define-se a priori quantos clusters serão formados
+
+# Tratamento inicial
+- Antes de escolher a medida de dissimilaridade a ser utilizada, é importante realizar uma analise das unidades de medida das variaveis
+- Se estiverem em unidades de medidas distintas (muito diferentes), é importante realizar a padronização das variáveis antes de iniciar a analise de cluster.
+- Comumente, aplica-se o ZScore (tornar variaveis com média = 0 e desvio padrão = 1)
+
+# Medidas de dissimilaridade
+- Identifica a distancia entre observações
+	distancia de minkowski
+	distancia euclidiana
+	distancia euclidiana quadrática
+	distancia de manhattan
+	distancia de chebychev
+	distancia de canberra
+A correlação de pearson entre as observaçoes tambem pode ser utilizada (medida de semelhança)
+
+# Esquemas de aglomeração
+- Esquemas hieráquicos
+	Aglomerativos: inicio com todas as observações separadas -> um unico cluster
+		Metodo encadeamento
+			nearest neighbor: (single linkage - vizinho mais próximo) provilegia menores distancia (observações distintas)
+			furthest neighbor: (complete linkage - vizinho mais distante) privilegia maiores distancias (observaççoes parecidas)
+			between groups: (average linkage - media das distancias de todos os pares de obs) junção de grupos pela distancia media entre todos os pares de observações do grupo em analise (consistente com single ou complete)
+
+- Esquemas hierarquicos aglomerativos
+	- Considerando n observaçoes, inicia-se com n clusters (stage 0)
+	- Na sequencia une-se as duas obs com menor distancia (n-1 clusters)
+	- Em seguida, um novo grupo é formado pela uniao de duas novas obs ou pela inclusão de uma obs ao cluster formado na etapa anterior (sempre pela menor distancia). Então, o metodo de encadeamente indica qual distancia
+	- Repete-se a etapa anterior n-1 vezes, ou seja, até restar somente 1 cluster
+	- O dendograma é um grafico que permite visualizar a formação dos clusters
+
+
+- Esquemas NÃO hieráquicos
+	A quantidade de clusters escolhidas é usada de base para a identificaçao dos centros de aglomeração.
+	Nas etapas seguintes, as obs vão sendo comparadas pela proximidade aos centroides dos outros clusters.
+	Encerrando quando não for possível realocar qualquer obs por estar mais proxima do centroIde de outro cluster.
+
+
+
+

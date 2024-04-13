@@ -1,0 +1,60 @@
+### estrutura de banco de dados
+- observações em linhas e variaveis em colunas, (formato tidy).
+- o inverso chama-se matriz transposta
+
+### tipos de variaveis e escalas de mensuração
+O uso correto de tecnicas de analise de dados depende do conhecimento das escalas de mensuraçao das variaveis que serão consideradas na analise.
+
+- qualitativas (nominais ou ordinais)
+	Elaboração de analises de frequencia, sem o calculo de médias e desvios. (Faixa de Renda (A,B..), Cidade, Profissão, etc)
+
+- quantitativas (tambem conhecidas por variaveis metricas)
+	Elaboração de analises com a utilização de médias, desvios, variâncias, entre outras medidas. (Idade, Altura, Renda, etc)
+
+* escala likert (diferencial semantico ex: dt,dp,ncnd,cp,ct)
+* ponderação arbitraria é errado!
+quanti -> quali OK
+quali -> quanti NOK
+
+- escala qualitativa nominal: ausência de ordenamento. ex: time de futebol (não tem hierarquia de importância)
+- escala qualitativa ordinal: ordenamento (ranking) cresc ou descres. ex: grau de escolaridade 
+- escala quantitativa (métrica): peso, altura, renda, indices.
+
+### machine learning
+unsupervised: identifica de maneira exploratoria, precisa inserir as novas observações e rodar o modelo de novo.
+supervised: tem-se um modelo preditivo, 
+
+- relação entre variaveis:
+	quali: associação
+	quanti: correlação
+
+- unsupervised techniques
+	analise de cluster - variaveis quantitativas
+		agrupamento de paises (analisando idade de bilionarios x percepçao de corrupção)
+	analise de correspondência - variaveis qualitativas
+		frequencia relativas entre variaveis
+	analise fatorial - variaveis quantitativas
+		correlação de variaveis
+
+- supervised techniques
+	verificar no slide, muita informação
+
+
+modelos supervisionados 
+	valor previstos x valores reais = se o mundo for perfeito é uma reta a 45º
+
+
+objetivos gerais
+- redução de dados ou simplificação estrutural
+- agrupamento e classificação
+- investigação de dependencia entre as variaveis
+- inferencia e previsão
+--------------------------------------------------------
+
+
+
+
+
+
+https://chat.whatsapp.com/IS6NJnHen05FxMVik67IG0
+
