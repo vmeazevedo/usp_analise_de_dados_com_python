@@ -1,11 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import scipy.cluster.hierarchy as sch
-from sklearn.cluster import AgglomerativeClustering
-import scipy.stats as stats
-from sklearn.cluster import KMeans
-import seaborn as sns
-import numpy as np
+
 
 ''' Cluster Hierárquico Aglomerativo '''
 
