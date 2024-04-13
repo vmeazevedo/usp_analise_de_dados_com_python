@@ -1,3 +1,7 @@
+scikit-learn
 numpy
-statsmodels
-factor_analyzer
+pandas
+seaborn
+scipy
+matplotlib
+threadpoolctl==3.1.0
