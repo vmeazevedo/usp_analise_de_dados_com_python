@@ -1,6 +1,6 @@
 # USP Análise de Dados com Python
 
-Este repositório contém materiais e recursos relacionados ao curso de Análise de Dados com Python oferecido pela Universidade de São Paulo (USP).
+Este repositório contém o meu entendimento sumarizado dos materiais e recursos relacionados ao curso de Análise de Dados com Python oferecido pela Universidade de São Paulo (USP) a qual eu estou realizando no momento.
 
 ## Descrição
 
