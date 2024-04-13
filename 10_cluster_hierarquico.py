@@ -49,7 +49,7 @@ print(dados_vest)
 
 #Plotando as observações e seus clusters (single)
 plt.figure(figsize=(10,10))
-fig = sns.scatterplot(x='matemática', y='física', s=60, data=dados_vest, hue='cluster_single')
+sns.scatterplot(x='matemática', y='física', data=dados_vest, hue='cluster_single', palette='viridis', s=100)
 plt.title('Clusters', fontsize=16)
 plt.xlabel('Matemática', fontsize=12)
 plt.ylabel('Física', fontsize=12)
