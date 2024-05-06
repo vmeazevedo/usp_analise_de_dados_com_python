@@ -5,3 +5,6 @@ seaborn
 scipy
 matplotlib
 threadpoolctl==3.1.0
+prince==0.7.1
+pandas
+scipy
